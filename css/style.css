@@ -183,7 +183,7 @@ nav ul li a.active {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(rgba(0, 31, 63, 0.8), rgba(0, 31, 63, 0.8)), url('../images/events/with_all_special_guests.jpg');
+    background: linear-gradient(rgba(0, 31, 63, 0.8), rgba(0, 31, 63, 0.8)), url('../images/events/banner.jpeg');
     background-size: cover;
     background-position: center;
     height: 80vh;
