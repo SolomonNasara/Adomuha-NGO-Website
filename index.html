@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -45,7 +47,9 @@
         <div class="container">
             <div class="about-content">
                 <h2>About ASCF</h2>
-                <p>Adomuha Safety Consciousness Foundation (ASCF) is a non-governmental organization dedicated to promoting safety awareness and education. We empower students and individuals with the knowledge and skills necessary to prevent and respond to safety threats.</p>
+                <p>Adomuha Safety Consciousness Foundation (ASCF) is a non-governmental organization dedicated to
+                    promoting safety awareness and education. We empower students and individuals with the knowledge and
+                    skills necessary to prevent and respond to safety threats.</p>
                 <a href="about.html" class="btn">Learn More</a>
             </div>
             <div class="about-image">
@@ -58,11 +62,13 @@
         <div class="container">
             <div class="mission">
                 <h3>Our Mission</h3>
-                <p>To empower students, individuals and communities with awareness, education, and skill, promoting a culture of safety, responsibility, and resilience.</p>
+                <p>To empower students, individuals and communities with awareness, education, and skill, promoting a
+                    culture of safety, responsibility, and resilience.</p>
             </div>
             <div class="vision">
                 <h3>Our Vision</h3>
-                <p>Empowering students with practical safety knowledge to reduce victimhood and promote a culture of safety consciousness.</p>
+                <p>Empowering students with practical safety knowledge to reduce victimhood and promote a culture of
+                    safety consciousness.</p>
             </div>
         </div>
     </section>
@@ -86,6 +92,53 @@
             </div>
         </div>
     </section>
+
+    <section class="pdf-access">
+        <div class="container">
+            <h2>Get Access to Our Safety Guidebook PDF</h2>
+            <p>Support our mission by making a one-time payment of <strong>₦1,000</strong> and get access to our
+                comprehensive safety awareness guidebook.</p>
+
+            <div class="bank-details">
+                <h3>Bank Transfer Details:</h3>
+                <ul>
+                    <li><strong>Bank:</strong> Zenith Bank</li>
+                    <li><strong>Account Name:</strong> Adomuha Safety Consciousness Foundation</li>
+                    <li><strong>Account Number:</strong> 1234567890</li>
+                </ul>
+            </div>
+
+            <p>After making payment, please fill out the form below and our team will send you the Mega.nz access link
+                and key.</p>
+
+            <form id="accessForm" style="max-width: 600px; margin-top: 20px;">
+                <input type="text" name="fullName" placeholder="Your Full Name" required
+                    style="width: 100%; padding: 10px; margin-bottom: 10px;">
+                <input type="email" name="email" placeholder="Your Email Address" required
+                    style="width: 100%; padding: 10px; margin-bottom: 10px;">
+                <input type="text" name="proof" placeholder="Payment Reference or Screenshot Link" required
+                    style="width: 100%; padding: 10px; margin-bottom: 10px;">
+                <button type="submit"
+                    style="padding: 10px 20px; background-color: #009578; color: white; border: none; cursor: pointer;">Submit
+                    & Request Access</button>
+            </form>
+
+            <div id="thankYouMsg" style="display:none; margin-top: 20px; color: green;">
+                <h3>Thank you!</h3>
+                <p>We’ve received your request. Our team will verify your payment and send the access link to your email
+                    shortly.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById('accessForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            document.getElementById('accessForm').style.display = 'none';
+            document.getElementById('thankYouMsg').style.display = 'block';
+        });
+    </script>
+
 
     <section class="events">
         <div class="container">
@@ -150,7 +203,8 @@
             <div class="footer-content">
                 <div class="footer-about">
                     <h3>About ASCF</h3>
-                    <p>Adomuha Safety Consciousness Foundation is dedicated to promoting safety awareness and education in Nigeria.</p>
+                    <p>Adomuha Safety Consciousness Foundation is dedicated to promoting safety awareness and education
+                        in Nigeria.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-facebook"></i></a>
                         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -174,7 +228,8 @@
                     <p><i class="fas fa-phone"></i> +2348065009106, +2348129331539</p>
                     <p><i class="fas fa-envelope"></i> ascfconnect@gmail.com</p>
                     <p><i class="fas fa-map-marker-alt"></i> No. 45, CBN Quarters, Durumi II, Garki Abuja</p>
-                    <p><i class="fas fa-map-marker-alt"></i> No 4, Itopa Abdulazeez Close, Apamsede Lokoja, Kogi State</p>
+                    <p><i class="fas fa-map-marker-alt"></i> No 4, Itopa Abdulazeez Close, Apamsede Lokoja, Kogi State
+                    </p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -185,4 +240,5 @@
 
     <script src="js/main.js"></script>
 </body>
+
 </html>
