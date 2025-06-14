@@ -1206,3 +1206,123 @@ footer {
         width: 100%;
     }
 }
+
+.pdf-access {
+    background-color: #f0f4f8;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.pdf-access h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #004466;
+}
+
+.pdf-access p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.bank-details {
+    background-color: #ffffff;
+    border-left: 5px solid #009578;
+    padding: 15px 20px;
+    margin: 20px auto;
+    max-width: 500px;
+    text-align: left;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.bank-details ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.bank-details li {
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #222;
+}
+
+#accessForm input[type="text"],
+#accessForm input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+
+#accessForm button {
+    padding: 12px 30px;
+    background-color: #009578;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#accessForm button:hover {
+    background-color: #007f63;
+}
+
+#thankYouMsg {
+    font-size: 1.1rem;
+    margin-top: 20px;
+    color: green;
+    font-weight: bold;
+}
+
+.seasonal-activities {
+    background-color: #ffffff;
+    padding: 60px 20px;
+    border-top: 1px solid #eee;
+}
+
+.seasonal-activities h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #222;
+    text-align: center;
+}
+
+.seasonal-activities p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #444;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.seasonal-activities .quarter {
+    background-color: #f9f9f9;
+    padding: 20px 25px;
+    margin-bottom: 25px;
+    border-left: 4px solid #009578;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.seasonal-activities h3 {
+    color: #004466;
+    margin-bottom: 10px;
+}
+
+.seasonal-activities ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.seasonal-activities li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    color: #333;
+}
