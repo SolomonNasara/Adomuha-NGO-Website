@@ -131,14 +131,6 @@
         </div>
     </section>
 
-    <script>
-        document.getElementById('accessForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            document.getElementById('accessForm').style.display = 'none';
-            document.getElementById('thankYouMsg').style.display = 'block';
-        });
-    </script>
-
     <section class="seasonal-activities">
         <div class="container">
             <h2>Seasonal Activities</h2>
@@ -188,8 +180,6 @@
             </div>
         </div>
     </section>
-
-
 
     <section class="events">
         <div class="container">
@@ -246,6 +236,11 @@
                 <a href="donate.html" class="btn">Donate Now</a>
                 <a href="contact.html" class="btn btn-outline">Volunteer</a>
             </div>
+            <div class="volunteer-form" style="margin-top: 20px;">
+                <h3>Volunteer Application Form</h3>
+                <p>Interested in volunteering? Download our application form, fill it out, scan it, and send it to <a href="mailto:ascfconnect@gmail.com">ascfconnect@gmail.com</a>.</p>
+                <a href="documents/volunteer-application-form.pdf" class="btn" download>Download Volunteer Form (PDF)</a>
+            </div>
         </div>
     </section>
 
@@ -284,10 +279,24 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Adomuha Safety Consciousness Foundation. All Rights Reserved. RC: 7199437</p>
+                <p>© 2025 Adomuha Safety Consciousness Foundation. All Rights Reserved. RC: 7199437</p>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Existing script for PDF access form
+        document.getElementById('accessForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            document.getElementById('accessForm').style.display = 'none';
+            document.getElementById('thankYouMsg').style.display = 'block';
+        });
+
+        // New script for volunteer form download feedback
+        document.querySelector('.volunteer-form a[download]').addEventListener('click', function () {
+            alert('Thank you for your interest in volunteering! Please fill out the form, scan it, and email it to ascfconnect@gmail.com.');
+        });
+    </script>
 
     <script src="js/main.js"></script>
 </body>
