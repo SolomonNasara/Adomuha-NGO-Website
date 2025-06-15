@@ -351,7 +351,7 @@ nav ul li a.active {
 
 .member img {
     width: 200px;
-    height: 200px;
+    height: 300px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
