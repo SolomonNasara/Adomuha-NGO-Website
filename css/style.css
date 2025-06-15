@@ -343,19 +343,19 @@ nav ul li a.active {
 
 .member {
     background-color: var(--light-gray);
-    padding: 20px;
-    border-radius: 10px;
-    width: 30%;
+    padding: 50px;
+    border-radius: 20px;
+    width: 50%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .member img {
     width: 150px;
-    height: 150px;
-    border-radius: 20%;
+    height: 100px;
+    border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 10px;
-    border: 2px solid var(--secondary-color);
+    margin-bottom: 20px;
+    border: 5px solid var(--secondary-color);
 }
 
 .member h3 {
