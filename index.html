@@ -7,6 +7,14 @@
     <title>ASCF - Adomuha Safety Consciousness Foundation</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init({
+                publicKey: "hADPCh9XKAPJigb6M", // Replace with your EmailJS public key
+            });
+        })();
+    </script>
 </head>
 
 <body>
@@ -125,7 +133,7 @@
 
             <div id="thankYouMsg" style="display:none; margin-top: 20px; color: green;">
                 <h3>Thank you!</h3>
-                <p>We’ve received your request. Our team will verify your payment and send the access link to your email
+                <p>We've received your request. Our team will verify your payment and send the access link to your email
                     shortly.</p>
             </div>
         </div>
@@ -295,16 +303,61 @@
     </footer>
 
     <script>
-        // Existing script for PDF access form
-        document.getElementById('accessForm').addEventListener('submit', function (e) {
+        // PDF Access Form Submission
+        document.getElementById('accessForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            document.getElementById('accessForm').style.display = 'none';
-            document.getElementById('thankYouMsg').style.display = 'block';
+            
+            const formData = {
+                fullName: this.fullName.value,
+                email: this.email.value,
+                proof: this.proof.value,
+                formName: "PDF Access Request",
+                submissionDate: new Date().toLocaleString()
+            };
+
+            emailjs.send("service_hyaqy2e", "template_lyb638g", formData)
+                .then(function(response) {
+                    console.log("PDF Access Request sent!", response);
+                    document.getElementById('accessForm').style.display = 'none';
+                    document.getElementById('thankYouMsg').style.display = 'block';
+                    
+                    // Optional: Reset form after submission
+                    setTimeout(() => {
+                        document.getElementById('accessForm').reset();
+                        document.getElementById('accessForm').style.display = 'block';
+                        document.getElementById('thankYouMsg').style.display = 'none';
+                    }, 5000);
+                }, function(error) {
+                    console.error("Email failed to send:", error);
+                    alert("There was an error submitting your form. Please try again or contact us directly at ascfconnect@gmail.com");
+                });
         });
 
-        // New script for volunteer form download feedback
-        document.querySelector('.volunteer-form a[download]').addEventListener('click', function () {
-            alert('Thank you for your interest in volunteering! Please fill out the form, scan it, and email it to ascfconnect@gmail.com.');
+        // Volunteer Form Download Tracking
+        document.querySelector('.volunteer-form a[download]').addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const volunteerData = {
+                action: "Volunteer Form Downloaded",
+                downloadTime: new Date().toLocaleString(),
+                formName: "Volunteer Interest"
+            };
+
+            emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", volunteerData)
+                .then(function(response) {
+                    console.log("Volunteer download tracked!", response);
+                    window.location.href = "volunteer-application-form.pdf";
+                    alert('Thank you for your interest in volunteering! Please fill out the form, scan it, and email it to ascfconnect@gmail.com.');
+                }, function(error) {
+                    console.error("Email failed to send:", error);
+                    window.location.href = "volunteer-application-form.pdf";
+                    alert('Thank you for your interest in volunteering! Please fill out the form, scan it, and email it to ascfconnect@gmail.com.');
+                });
+        });
+
+        // Mobile menu toggle functionality
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
         });
     </script>
 
