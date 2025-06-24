@@ -6,6 +6,14 @@
     <title>Donate - ASCF</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init({
+                publicKey: "hADPCh9XKAPJigb6M", // Replace with your EmailJS public key
+            });
+        })();
+    </script>
 </head>
 <body>
     <header>
@@ -193,6 +201,11 @@
                     </div>
                     <button type="submit" class="btn">Submit Donation Information</button>
                 </form>
+                <div id="donationThankYou" style="display:none; margin-top: 20px; padding: 20px; background-color: #f0f8f0; border-radius: 5px;">
+                    <h3 style="color: #009578;">Thank You for Your Donation!</h3>
+                    <p>We've received your donation information. Our team will contact you shortly to confirm and provide a receipt.</p>
+                    <p>For immediate assistance, please call +2348065009106.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -242,6 +255,67 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Donation Form Submission
+        document.getElementById('donationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = {
+                donorName: this['donor-name'].value,
+                donorEmail: this['donor-email'].value,
+                donorPhone: this['donor-phone'].value,
+                donationType: this['donation-type'].value,
+                donationAmount: this['donation-amount'].value,
+                donationPurpose: this['donation-purpose'].value,
+                donationMessage: this['donation-message'].value,
+                submissionDate: new Date().toLocaleString(),
+                formName: "Donation Form"
+            };
+
+            // Send email via EmailJS
+            emailjs.send("service_hyaqy2e", "template_lyb638g", formData)
+                .then(function(response) {
+                    console.log("Donation form submitted successfully!", response);
+                    // Hide form and show thank you message
+                    document.getElementById('donationForm').style.display = 'none';
+                    document.getElementById('donationThankYou').style.display = 'block';
+                    
+                    // Optional: Reset form after 5 seconds
+                    setTimeout(() => {
+                        document.getElementById('donationForm').reset();
+                        document.getElementById('donationForm').style.display = 'block';
+                        document.getElementById('donationThankYou').style.display = 'none';
+                    }, 10000);
+                }, function(error) {
+                    console.error("Email failed to send:", error);
+                    alert("There was an error submitting your donation information. Please try again or contact us directly at ascfconnect@gmail.com");
+                });
+        });
+
+        // Tab functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons and contents
+                tabBtns.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding content
+                btn.classList.add('active');
+                const tabId = btn.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+    </script>
 
     <script src="js/main.js"></script>
 </body>
